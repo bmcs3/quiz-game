@@ -17,7 +17,7 @@ function start() {
 			   
 		   // change the question
 		   var q= document.querySelector("#question");
-		   if (q.textContent === "Who is the egyptian pharon whose tomb was discovered in the 1922?") {q.textContent= "When was Napoleon Bonaparte born?";
+		   if (q.textContent === "Who is the egyptian pharon whose tomb was discovered in 1922?") {q.textContent= "When was Napoleon Bonaparte born?";
 		   options[0].textContent= "1769";
 		   options[1].textContent="1780";
 		   options[2].textContent= "1865"}
