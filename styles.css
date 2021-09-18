@@ -1,0 +1,90 @@
+
+
+
+#question {background: #68F8CB; margin-bottom: 1.5em;  line-height: 1.5em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em}
+
+.option {background: #74FBF5; margin-bottom: 1em; line-height: 1em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em }
+
+
+
+#questions { margin: 2em auto 0 auto; text-align: center;} 
+
+.icon {margin: 2em 1em 1em 1em; width: 2.5em;}
+	
+	.result {font-weight: bold; font-size: 1.5em; margin-top: 1em}
+	
+
+body { font-family: 'Nunito', sans-serif; margin: 0 0 7em 0}
+h1 {color: #03ac13; text-align: center; font-size: 2.5em ; width: 95% ; margin-top: 2em}
+
+	p {color: #333333; font-size: 2em; text-align: center; width: 95%;  margin: 0 auto 0 auto}
+	
+	
+	.qMark {width:2em; padding: .5em ; }
+
+
+.imgL {float: left;}
+.imgR{float: right}
+
+img{padding: 1em;}
+
+#clear {clear: both}
+
+.topics {display: flex; align-items: center; width: 95%; margin: 0 auto 0 auto; 
+flex-wrap: wrap;   flex-direction: column;  }
+
+.topic1:hover, .topic2:hover, .topic3:hover, .topic4:hover, .topic5:hover { box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;}
+ 
+
+.topic1 { align-self: flex-start; background-image: url("history.png"); background-size: 100% 100%; width: 50%; height: 15em; border-radius: 3em   ; display: flex; 
+align-items:center;
+        justify-content:center;  margin-top: 4em; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	}
+	
+	.topic2 { background-image: url("geography.png"); background-size: 100% 100%; width: 50%; height: 15em; align-self: flex-end; border-radius: 3em  ;  display: flex; 
+	align-items:center;
+        justify-content:center; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	}
+	
+	.topic3 {  background-image: url("animals.png"); background-size: 100% 100%; width: 50%; height: 15em; align-self: flex-start; border-radius: 3em ;  display: flex; 
+	align-items:center;
+        justify-content:center; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+		}
+	
+	.topic4 {  background-image: url("sport.png"); background-size: 100% 100%; width: 50%; height: 15em; align-self: flex-end; border-radius: 3em ;  display: flex; 
+	align-items:center;
+        justify-content:center;  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	}
+	
+	.topic5 {  background-image: url("maths.png"); background-size: 100% 100%; width: 50%; height: 15em; align-self: start; border-radius: 3em   ;  display: flex; 
+	align-items:center;
+        justify-content:center; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+	}
+	 
+	 
+	 .title {  text-align: center;  ; font-size: 1.5em ;  font-weight: bold; overflow-wrap: break-word; overflow-x: auto;  overflow-wrap: break-word;}
+	 
+	 @media  screen and (min-width: 60em) { 
+	 .topics { width: 60%;  padding-top: 4em; } 
+	 .title {font-size: 2.5em ;} 
+	 p {font-size: 2.5em; width: 100%} 
+	 h1 {font-size: 3em; width: 100% ; margin-top: -5%} 
+	 .topic1, .topic2, .topic3, .topic4, .topic5 {height: 23em; width: 40%} 
+	 .qMark {width: 5em; padding: 1em} 
+	 .icon {width: 5em; margin: 4em 3.5em 0 3.5em;}
+	 .result{font-size: 3em; margin-top: 0} 
+	 #questions {width: 80%; margin: 0 auto 0 auto } 
+	 #question {font-size: 2.5em} 
+	 .option {font-size: 2.5em} 
+	 .option:hover {transform: scale(1.1)}
+	 }
+	 
+	 @media screen and (max-width: 196px) {.qMark {display: none}}
+	 
+	 @keyframes out {
+		 from {transform: scale(0.1)}
+		 }
+	 
+	 @media screen and (min-width: 100em){.topic1, .topic2, .topic3, .topic4, .topic5 {width: 30%}}
+	 
+	 .qMark {animation: out 2s ease infinite both alternate-reverse }
