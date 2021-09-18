@@ -32,7 +32,7 @@ function start() {
 		   options[1].textContent="12";
 		   options[2].textContent= "13"}
 		   
-		   else if (q.textContent === "How many independant countries are there in South America?") {q.textContent= "Where is the mount of Everest located";
+		   else if (q.textContent === "How many independant countries are there in South America?") {q.textContent= "Where is the mount of Everest located?";
 		   options[0].textContent= "On the borders between Nepal and China";
 		   options[1].textContent="Nepal";
 		   options[2].textContent= "China"}
