@@ -68,7 +68,7 @@ align-items:center;
 	 .topics { width: 60%;  padding-top: 4em; } 
 	 .title {font-size: 2.5em ;} 
 	 p {font-size: 2.5em; width: 100%} 
-	 h1 {font-size: 3em; width: 100% ; margin-top: -5%} 
+	 h1 {font-size: 3em; width: 100% ;} 
 	 .topic1, .topic2, .topic3, .topic4, .topic5 {height: 23em; width: 40%} 
 	 .qMark {width: 5em; padding: 1em} 
 	 .icon {width: 5em; margin: 4em 3.5em 0 3.5em;}
