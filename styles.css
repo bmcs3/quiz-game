@@ -62,7 +62,7 @@ align-items:center;
 	}
 	 
 	 
-	 .title {  text-align: center;  ; font-size: 1.5em ;  font-weight: bold; overflow-wrap: break-word; overflow-x: auto;  overflow-wrap: break-word;}
+	 .title {  text-align: center;  ; font-size: 1.5em ; overflow-wrap: break-word; overflow-x: auto;  overflow-wrap: break-word;}
 	 
 	 @media  screen and (min-width: 60em) { 
 	 .topics { width: 60%;  padding-top: 4em; } 
