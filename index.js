@@ -19,7 +19,7 @@ function writeHeading() {
     i++;
     setTimeout(writeHeading, 70);}
 	
-  if (h.textContent === heading) {p.style.color="#333333"; p.style.animation= "fall 1.5s"}
+  if (h.textContent === heading) {p.style.color="#333333"; p.style.animation= "fall 2s"}
 }
  
  
