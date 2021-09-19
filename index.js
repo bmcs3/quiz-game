@@ -27,7 +27,7 @@ function writePara1() {
   if (j < para1.length) {
     p.textContent += para1.charAt(j);
     j++;
-    setTimeout(writePara1, 100);}
+    setTimeout(writePara1, 70);}
 }
  
  
