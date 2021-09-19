@@ -17,17 +17,9 @@ function writeHeading() {
   if (i < heading.length) {
     h.textContent += heading.charAt(i);
     i++;
-    setTimeout(writeHeading, 90);}
+    setTimeout(writeHeading, 70);}
 	
-  if (h.textContent === heading) {writePara1();}
-}
-
- 
-function writePara1() {
-  if (j < para1.length) {
-    p.textContent += para1.charAt(j);
-    j++;
-    setTimeout(writePara1, 90);}
+  if (h.textContent === heading) {p.style.color="#333333"; p.style.animation= "fall 1.5s"}
 }
  
  
@@ -52,14 +44,14 @@ function writePara1() {
  window.open("animals.html", "_self")
  })
  
- /// showing the questions about sport
+ /// showing the questions about sports
  var t4= document.querySelector(".topic4");
   t4.addEventListener("click", function(){
 	 
  window.open("sport.html", "_self")
  }) 
  
- /// showing the questions about math
+ /// showing the questions about maths
  var t5= document.querySelector(".topic5");
   t5.addEventListener("click", function(){
 	 
