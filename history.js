@@ -10,14 +10,14 @@ function start() {
 	   options[i].addEventListener("click", function(){
 		   
 		   var q= document.querySelector("#question");
+		   var options= document.querySelectorAll(".option");
 		   q.style.animation="appear 2s ease 1";
 		   for (let i=0; i<options.length; i++){options[i].style.animation="appear 2s ease 1"}
 		   
 		   //save answer 
 		   answers.push(this.textContent);
 		       console.log(answers);
-			   
-			   var options= document.querySelectorAll(".option");
+			  
 			   
 		   // change the question
 		   if (q.textContent === "Who is the egyptian pharon whose tomb was discovered in 1922?") {q.textContent= "When was Napoleon Bonaparte born?";
