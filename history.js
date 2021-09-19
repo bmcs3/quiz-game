@@ -21,21 +21,29 @@ function start() {
 		   options[0].textContent= "1769";
 		   options[1].textContent="1780";
 		   options[2].textContent= "1865"}
+		   q.style.animation="appear 2s ease 1";
+		   for (let i=0; i<options.length; i++){options[i].style.animation="appear 2s ease 1"}
 		   
 		   else if (q.textContent === "When was Napoleon Bonaparte born?") {q.textContent= "Who was the first US president?";
 		   options[0].textContent= "George Washington";
 		   options[1].textContent="John Adams";
 		   options[2].textContent= "Thomas Jefferson"}
+		   q.style.animation="appear 2s ease 1";
+		   for (let i=0; i<options.length; i++){options[i].style.animation="appear 2s ease 1"}
 		   
 		   else if (q.textContent === "Who was the first US president?") {q.textContent= "Who was the first person to go to space?";
 		   options[0].textContent= "Neil Armstrong";
 		   options[1].textContent="Alan Shepard";
 		   options[2].textContent= "cosmonaut Yuri Gagarin"}
+		   q.style.animation="appear 2s ease 1";
+		   for (let i=0; i<options.length; i++){options[i].style.animation="appear 2s ease 1"}
 		   
 		   else if (q.textContent === "Who was the first person to go to space?") {q.textContent= "What is the oldest country in the world?";
 		   options[0].textContent= "India";
 		   options[1].textContent="Egypt";
 		   options[2].textContent= "Greece"}
+		   q.style.animation="appear 2s ease 1";
+		   for (let i=0; i<options.length; i++){options[i].style.animation="appear 2s ease 1"}
 		   
 		   else {
 			   var options= document.querySelectorAll(".option");
