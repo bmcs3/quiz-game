@@ -19,7 +19,7 @@ to {opacity: 1}
 	
 
 body { font-family: 'Nunito', sans-serif; margin: 0 0 7em 0}
-h1 {color: #03ac13; text-align: center; font-size: 2.5em ; width: 95% ; margin-top: -1.5em}
+h1 {color: #03ac13; text-align: center; font-size: 2.5em ; width: 95% ; margin-top: -.5em}
 
 	p {color: #fff; font-size: 2em; text-align: center; margin: 0 auto 0 auto}  
 	
@@ -81,7 +81,7 @@ align-items:center;
 	 .topics { width: 60%;  padding-top: 4em; } 
 	 .title {font-size: 2.5em ;} 
 	 p {font-size: 2.5em; width: 100%} 
-	 h1 {font-size: 3em; width: 100% ;} 
+	 h1 {font-size: 3em; width: 100% ; margin-top: -1.5em} 
 	 .topic1, .topic2, .topic3, .topic4, .topic5 {height: 23em; width: 40%} 
 	 .qMark {width: 5em; padding: 1em} 
 	 .icon {width: 5em; margin: 4em 3.5em 0 3.5em;}
