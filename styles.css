@@ -1,11 +1,15 @@
 
 
 
-#question {background: #68F8CB; margin-bottom: 1.5em;  line-height: 1.5em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em}
+#question {animation: appear 2s ease-out 1 ; background: #68F8CB; margin-bottom: 1.5em;  line-height: 1.5em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em}
 
-.option {background: #74FBF5; margin-bottom: 1em; line-height: 1em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em }
+.option {animation: appear 2s ease-out 1 ;background: #74FBF5; margin-bottom: 1em; line-height: 1em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em }
 
+@keyframes appear {
+  from {opacity: 0}
 
+to {opacity: 1}
+}
 
 #questions { margin: 2em auto 0 auto; text-align: center;} 
 
