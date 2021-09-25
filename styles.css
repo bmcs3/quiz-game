@@ -3,8 +3,8 @@
 
 #question {animation: appear 2s ease-in 1 ; background: #68F8CB; margin-bottom: 1.5em;  line-height: 1.5em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em}
 
-.option {animation: appear 2s ease-in 1 ;background: #74FBF5; margin-bottom: 1em; line-height: 1em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em }
-.option:hover {background: #58F1EB}
+.option {animation: appear 1s ease-in 1 ;background: #74FBF5; margin-bottom: 1em; line-height: 1em; padding: .5em; width: 90%; font-size: 1.5em; border-radius: 1.5em }
+
 
 @keyframes appear {
   from {opacity: 0}
@@ -90,7 +90,7 @@ align-items:center;
 	 #questions {width: 80%; margin: 0 auto 0 auto } 
 	 #question {font-size: 2.5em} 
 	 .option {font-size: 2.5em} 
-	 .option:hover {transform: scale(1.1);}
+	 .option:hover {transform: scale(1.1); background: #58F1EB}
 	 }
 	 
 	 @media screen and (max-width: 196px) {.qMark {display: none}}
