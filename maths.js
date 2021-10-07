@@ -32,7 +32,7 @@ function start() {
 		   options[1].textContent="1800";
 		   options[2].textContent= "1805"}
 		   
-		   else if (q.textContent === "What is the next number in the row: 1, 2, 6, 42?") {q.textContent= "If the ray of a square is 2 meters, what is the value of its area?";
+		   else if (q.textContent === "What is the next number in the row: 1, 2, 6, 42?") {q.textContent= "If the radius of a square is 2 meters, what is the value of its area?";
 		   options[0].textContent= "6.283185307";
 		   options[1].textContent="12.56637061" ;
 		   options[2].textContent= "9.424777961"}
