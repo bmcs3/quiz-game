@@ -1,0 +1,349 @@
+body::-webkit-scrollbar {
+  width: .4em;
+}
+
+body::-webkit-scrollbar-track {
+  background: #D5FEFF;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to top, #8360c3, #2ebf91);
+  border-radius: .7em;
+}
+
+
+*:focus {
+    outline: 0 !important;
+}
+
+
+html {
+	padding-bottom: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Rubik', sans-serif;
+	sans-serif;
+	margin: 0;
+	padding-bottom: 0;
+	background-color: #D5FEFF;
+	font-color: #373631
+}
+
+footer {
+	margin: 1.5em 0 1em 0;
+	font-weight: bold;
+}
+
+#container {
+	padding: 30px;
+}
+
+
+#question {
+    animation: background 1.5s ease-in 1 ;
+    margin: 1em auto 1.5em auto;
+    line-height: 1.5em;
+    padding: .5em;
+    width: 90%;
+    font-size: 1.5em;
+    border-radius: 1.5em;
+    text-align: center;
+    color: #414645;
+    border-width: 3px;
+    border: solid #BFD6D2;
+    font-weight: bold;
+}
+
+#option1, #option2, #option3 {
+    cursor: pointer;
+    animation: appear 1s ease-in 1 ;
+    background-image: linear-gradient(to right, #00b4db, #0083b0);
+    margin: 1em auto 0 auto;
+    line-height: 1em;
+    padding: .5em;
+    width: 90%;
+    font-size: 1.5em;
+    border-radius: 1.5em;
+    text-align:center;
+    color: #D5FEFF;
+    font-weight: 400;
+}
+
+#option2 {
+    background-image: linear-gradient(to left, #00b4db, #0083b0);
+}
+
+#go_back {
+    font-size: 1.5em;
+    margin: 2em auto 2em auto;
+    color: #BFD6D2;
+    cursor: pointer;
+}
+
+#go_back:hover {
+    color: #414645;
+    font-size: 1.6em;
+    margin-left: .6em;
+}
+
+
+/* ******************************************* Animations ********************************************* */
+@keyframes appear {
+    from {opacity: 0}
+    to {opacity: 1}
+}
+
+
+#questions {
+    margin: 2em auto 0 auto;
+    padding: 0;
+    text-align: center;
+}
+
+.icons {
+    width: 50%;
+    margin: auto;
+    padding: 0 auto 0 auto;
+    text-align: center;
+}
+
+.icon {
+    margin: .5em;
+    padding: 0;
+    font-size: 3em;
+    color: #D2B43C;
+    cursor: pointer
+}
+	
+.result {font-weight: 900; font-size: 1.5em; margin-top: 1em}
+
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -64.5px;
+  margin-top: -85.5px;
+}
+
+
+.emoji{
+    animation: float 3s ease-out infinite;
+    font-size: 1em;
+}
+
+	
+.qMark {
+	color: #3DB5A1;
+	font-size: 2em;
+	padding: .3em
+}
+
+
+.imgL {float: left;}
+.imgR {float: right;}
+
+img{padding: 1em;}
+
+#clear {clear: both}
+
+
+.topics {
+	display: flex;
+	align-items: center; 
+	width: 95%; 
+	margin: -2em auto 0 auto;
+	flex-wrap: wrap;   
+	flex-direction: column;
+	animation: appear 2s
+}
+
+.heading {
+    text-align: center;
+    color: #414645;
+    text-shadow: 2px 3px 4px #3DB5A1;
+    margin-top: -1em;
+    animation: appear 2s
+}
+
+
+.topic1:hover, .topic2:hover, .topic3:hover, .topic4:hover, .topic5:hover { box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;}
+ 
+
+.topic1 {
+    text-shadow: 1px 3px 9px rgba(0,0,0,0.6);
+    font-weight: bold;
+    cursor: pointer;
+	align-self: flex-start; 
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/history.jpg);
+	background-size: 100% 100%; 
+	width: 50%; 
+	height: 15em; 
+	border-radius: 2em; 
+	display: flex; 
+	align-items:center;
+    justify-content:center; 
+	margin-top: 4em; 
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+	
+
+.topic2 {
+    text-shadow: 1px 3px 9px rgba(0,0,0,0.6);
+    font-weight: bold;
+    cursor: pointer;
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/geography.jpg);
+	background-size: 100% 100%; 
+	width: 50%; 
+	height: 15em; 
+	align-self: flex-end; 
+	border-radius: 2em;  
+	display: flex; 
+	align-items:center;
+	justify-content:center; 
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+	
+.topic3 {
+    text-shadow: 1px 3px 9px rgba(0,0,0,0.6);
+    font-weight: bold;
+    cursor: pointer;
+	background-image:
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/animals.jpg);
+	background-size: 100% 100%; 
+	width: 50%; 
+	height: 15em; 
+	align-self: flex-start; 
+	border-radius: 2em ;  
+	display: flex; 
+	align-items:center;
+	justify-content:center; 
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+	
+.topic4 {
+    text-shadow: 1px 3px 9px rgba(0,0,0,0.6);
+    font-weight: bold;
+    cursor: pointer;
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/sports_2.jpeg);
+	background-size: 100% 100%; 
+	width: 50%; 
+	height: 15em; 
+	align-self: flex-end; 
+	border-radius: 2em ;  
+	display: flex; 
+	align-items:center;
+	justify-content:center;  
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+	
+.topic5 {
+    text-shadow: 1px 3px 9px rgba(0,0,0,0.6);
+    font-weight: bold;
+    cursor: pointer;
+	background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+    ),
+    url(../images/maths.jpg);
+	background-size: 100% 100%; 
+	width: 50%; 
+	height: 15em; 
+	align-self: start; 
+	border-radius: 2em;  
+	display: flex; 
+	align-items:center;
+	justify-content:center; box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
+	 
+
+.title {  
+	text-align: center;
+	font-size: 1.5em ; 
+	overflow-wrap: break-word; 
+	overflow-x: auto;  
+	overflow-wrap: break-word;
+	color:#EDF6F6
+}
+
+
+/* *************************** Countdown timer ************************ */
+
+.timer {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #F6F3F2;
+  width: 2em;
+  height: 2em;
+  margin: 0 auto 2em auto;
+  padding: .1em;
+  background: rgb(65, 70, 69);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+/* **************** MEDIA QUERIES ************************* */
+
+	 @media  screen and (min-width: 60em) { 
+         .topics { width: 60%;  padding-top: 4em;}
+         .title {font-size: 2.5em ;}
+         .heading {font-size: 2.5em; width: 100%}
+         .topic1, .topic2, .topic3, .topic4, .topic5 {height: 23em; width: 40%}
+         .qMark {font-size: 2.5em; }
+         .icon {font-size: 4em}
+         .result{font-size: 3em; margin-top: 0}
+         #questions {width: 80%; margin: 0 auto 0 auto }
+         #question {font-size: 1.5em}
+         #option1, #option2, #option3 {font-size: 1.5em, transition: transform 0.3s ease;}
+         #option1:hover, #option2:hover, #option3:hover {width: calc(95%);}
+
+         #go_back { position: absolute;
+                    top: 50%;
+                    left: 0;
+                    -ms-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    margin: 0 0 0 .5em;
+                  }
+
+	 }
+	 
+	 @media screen and (max-width: 196px) {.qMark {display: none}}
+	 
+	 @keyframes out {
+		 from {transform: scale(0.3)}
+
+	}
+	 
+	 @media screen and (min-width: 100em){.topic1, .topic2, .topic3, .topic4, .topic5 {width: 30%}}
+	 
+	 .qMark {animation: out 2s ease infinite both alternate-reverse }
+
+
+
+

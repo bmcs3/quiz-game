@@ -1,0 +1,275 @@
+<!DOCTYPE >
+
+<html lang="en"> 
+
+<head>
+<meta charset="utf-8"/>
+
+<link href="static/css/styles.css" rel="stylesheet"/>
+
+<meta name="viewport" content="width= device-width, initial-scale=1"/>
+
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Rubik&display=swap" rel="stylesheet">
+
+
+<script src="https://kit.fontawesome.com/8a181a8ab1.js" crossorigin="anonymous"></script>
+
+<script src="https://d3js.org/d3.v5.min.js"></script>
+
+<script src="static/js/quiz.js"></script>
+
+<link rel="icon" type="image/ico" href="static/images/favicon.png">
+
+<title> Quiz game </title>
+</head>
+
+<body>
+
+<!-- putting three question marks in the top left and top right corners -->
+
+<i class="imgL qMark fa-solid fa-question"></i>
+<i class="qMark fa-solid fa-question"></i> 
+
+<i class="imgR qMark fa-solid fa-question"></i>  
+<i class="imgR qMark fa-solid fa-question"></i>  
+<div id="clear"></div>
+
+<i class="imgL qMark fa-solid fa-question"></i> 
+<i class="imgR qMark fa-solid fa-question"></i> 
+<div id="clear"></div>
+
+
+<!--<div class="timer" id="timer"></div>-->
+
+
+<div id= "questions">
+
+    <!--
+         JS reads the list of MCQ and does all the job
+         (displaying 1 question at a time and correcting the user's answer)
+    -->
+
+    <p id="question"> {{question1}} </p>
+
+    <p id="option1"> {{option1}} </p>
+
+    <p id="option2"> {{option2}} </p>
+
+    <p id="option3"> {{option3}} </p>
+
+
+    <div id="go_back">
+        <i class="fa-solid fa-circle-arrow-left"></i>
+    </div>
+
+</div>
+
+
+
+
+<script>
+
+// ************************************************************************************8
+
+    // Go to the home page when the back arrow is clicked
+    document.querySelector("#go_back").addEventListener('click', function() {
+        window.location.href = "{{ url_for('main') }}";
+    });
+
+
+    // Parsing the questions, options and answers strings into a list of MCQ
+    var questions = " {{questions}} "
+    questions = questions.replaceAll("&#39;", "").replaceAll("[", "").replaceAll("]", "").replaceAll("&#34;", "")
+    questions = questions.split(",");
+    questions = questions.map(str => str.trim())
+
+    var options = " {{options}} "
+    options = options.replaceAll("&#39;", " ")
+    options = options.split(" , ");
+    options = options.map(str => str.replaceAll("[","").replaceAll("]", "").trim().split(';'))
+
+    var answers = " {{answers}} "
+    answers = answers.replaceAll("&#39;", " ").replaceAll("[", "").replaceAll("]", "")
+    answers = answers.split(" , ");
+
+    answers = answers.map(str => str.trim())
+
+    console.log(answers)
+
+    // **** The correct answer ****
+    answer = " {{answer1}} "
+
+    // The index of the current question
+    i = 0
+
+    // The count of wrong answers
+    wrong_answers = 0
+
+    // Actions to take when the mcq is completed
+    console.log("Questions done");
+    function questions_done(completed) {
+        // document.querySelector("body").removeChild(document.querySelector("#questions"));
+        document.querySelector("#questions").textContent = '';
+
+        // Create an element with the results and display it
+        // The text, e.g., 3 wrong answers :(
+
+        var result = document.createElement("p");
+
+        if (completed) {
+            result.textContent = `${10 - wrong_answers}/10`
+            var emoji = document.createElement("span");
+            emoji_value = (wrong_answers==0)?String.fromCodePoint(0x1F60A):(wrong_answers<3)?String.fromCodePoint(0x1F642):(wrong_answers<5)?String.fromCodePoint(0x1F610):(wrong_answers<7)?String.fromCodePoint(0x1F641):String.fromCodePoint(0x1F61E)
+            emoji.textContent = emoji_value
+            emoji.classList.add("emoji")
+        }
+
+        else {
+            result.textContent = "Time ended!"
+        }
+
+        result.classList.add("result")
+        document.querySelector("#questions").appendChild(result)
+        document.querySelector("p").appendChild(emoji)
+
+        var div = document.createElement("div");
+        div.classList.add("icons")
+        document.querySelector("#questions").appendChild(div)
+
+        // The home button and the retry button
+        var home = document.createElement("i");
+        home.classList.add("fa-solid")
+        home.classList.add("fa-house")
+        home.classList.add("icon")
+        document.querySelector(".icons").appendChild(home)
+
+        home.addEventListener('click', function() {
+            window.location.href = "{{ url_for('main') }}";
+        });
+
+        var retry = document.createElement("i");
+        retry.classList.add("fa-solid")
+        retry.classList.add("fa-rotate-right")
+        retry.classList.add("icon")
+        document.querySelector(".icons").appendChild(retry)
+
+        retry.addEventListener('click', function() {
+            window.location.href = "/history";
+        });
+    }
+
+
+    // When an option is clicked, compare it to the correct answer, if they are equal,
+    // make the borders green, otherwise make them red
+    document.querySelectorAll("#option1, #option2, #option3").forEach(
+    function(element) {
+        element.addEventListener("click", function() {
+
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Disable clicks of options
+            document.querySelectorAll("#option1, #option2, #option3").forEach(
+                function(element) {element.style.pointerEvents = 'none';}
+            )
+
+            i += 1
+
+            // Check if the user got the answer right.
+            if (element.textContent == answer){
+                var audio = new Audio('static/sounds/correct.wav');
+                audio.play();
+                this.style.background = "#41D343";
+                this.style.fontWeight = "bold"
+
+            }
+            else {
+                wrong_answers += 1
+
+                var audio = new Audio('static/sounds/wrong.wav');
+                audio.play();
+                this.style.background = "#EA4040";
+                this.style.fontWeight = "bold"
+
+                // Show the correct answer after 0.5 second
+                setTimeout(function() {
+                x = [document.querySelector("#option1"), document.querySelector("#option2"), document.querySelector("#option3")]
+                x.splice(x.indexOf(element), 1);
+
+                x.map(item => {
+                    if (item.textContent == answer) {
+                        item.style.background = "#41D343" ;
+                        item.style.fontWeight = "bold"
+                    }
+                })
+
+                }, 500);
+            }
+
+            // Show the progress bar
+            document.querySelector("#question").style.backgroundImage = `linear-gradient(left, color-mix(in srgb, #EA4040 ${100 * wrong_answers/i}%, #41D343), color-mix(in srgb, #EA4040 ${100 * wrong_answers/i}%, #41D343) ${10 * i}%, transparent ${10 * i}%, transparent 100%)`;
+            document.querySelector("#question").style.backgroundImage = `-webkit-linear-gradient(left, color-mix(in srgb, #EA4040 ${100 * wrong_answers/i}%, #41D343), color-mix(in srgb, #EA4040 ${100 * wrong_answers/i}%, #41D343) ${10 * i}%, transparent ${10 * i}%, transparent 100%)`
+
+
+
+            /* ********* Wait for 3 seconds and move to the next question ************* */
+
+            setTimeout(function() {
+                if (i < 10) {
+
+                    // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Enable clicks of options
+                    document.querySelectorAll("#option1, #option2, #option3").forEach(
+                        function(element) {element.style.pointerEvents = 'auto';}
+                    )
+
+                    document.querySelectorAll("#option1, #option2, #option3").forEach(
+                        function(item) {
+                            item.style.backgroundImage = (item.id == "option2")?"linear-gradient(to left, #00b4db, #0083b0)":"linear-gradient(to right, #00b4db, #0083b0)"
+                            item.style.fontWeight = "normal"
+                    })
+
+                    document.querySelector("#question").textContent = questions[i-1]
+                    document.querySelector("#option1").textContent = options[i-1][0]
+                    document.querySelector("#option2").textContent = options[i-1][1]
+                    document.querySelector("#option3").textContent = options[i-1][2]
+
+                    answer = answers[i-1]
+                }
+
+                else {
+                    questions_done(true);
+                }
+
+            }, 2000);
+
+        });
+    });
+
+
+
+</script>
+
+<i class="imgL qMark fa-solid fa-question"></i> 
+<i class="imgR qMark fa-solid fa-question"></i> 
+<div id="clear"></div>
+ 
+<i class="imgL qMark fa-solid fa-question"></i>  
+<i class="qMark fa-solid fa-question"></i>  
+
+
+<i class="imgR qMark fa-solid fa-question"></i>
+<i class="imgR qMark fa-solid fa-question"></i> 
+<div id="clear"></div>
+
+
+<footer>
+
+<!--Footer content -->
+<small>&copy; 2023, Bouchra Mohamed Lemine.</small>
+
+</footer>
+
+</body>
+
+
+</html>
