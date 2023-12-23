@@ -23,7 +23,7 @@
 
 <link rel="icon" type="image/ico" href="static/images/favicon.png">
 
-<title> Quiz game </title>
+<title> Test Your {{ topic }} Knowledge</title>
 </head>
 
 <body>
@@ -31,14 +31,14 @@
 <!-- putting three question marks in the top left and top right corners -->
 
 <i class="imgL qMark fa-solid fa-question"></i>
-<i class="qMark fa-solid fa-question"></i> 
+<i class="qMark fa-solid fa-question"></i>
 
-<i class="imgR qMark fa-solid fa-question"></i>  
-<i class="imgR qMark fa-solid fa-question"></i>  
+<i class="imgR qMark fa-solid fa-question"></i>
+<i class="imgR qMark fa-solid fa-question"></i>
 <div id="clear"></div>
 
-<i class="imgL qMark fa-solid fa-question"></i> 
-<i class="imgR qMark fa-solid fa-question"></i> 
+<i class="imgL qMark fa-solid fa-question"></i>
+<i class="imgR qMark fa-solid fa-question"></i>
 <div id="clear"></div>
 
 
@@ -110,7 +110,9 @@
 
     // Actions to take when the mcq is completed
     console.log("Questions done");
+
     function questions_done(completed) {
+
         // document.querySelector("body").removeChild(document.querySelector("#questions"));
         document.querySelector("#questions").textContent = '';
 
@@ -157,7 +159,7 @@
         document.querySelector(".icons").appendChild(retry)
 
         retry.addEventListener('click', function() {
-            window.location.href = "/history";
+            window.location.href = "/{{ topic }}";
         });
     }
 

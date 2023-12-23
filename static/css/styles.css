@@ -54,6 +54,8 @@ footer {
     border-width: 3px;
     border: solid #BFD6D2;
     font-weight: bold;
+
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 50px;
 }
 
 #option1, #option2, #option3 {
@@ -69,6 +71,8 @@ footer {
     text-align:center;
     color: #D5FEFF;
     font-weight: 400;
+
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 
 #option2 {
@@ -114,7 +118,8 @@ footer {
     padding: 0;
     font-size: 3em;
     color: #D2B43C;
-    cursor: pointer
+    cursor: pointer;
+    text-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
 }
 	
 .result {font-weight: 900; font-size: 1.5em; margin-top: 1em}
