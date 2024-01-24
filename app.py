@@ -6,9 +6,9 @@ app = Flask(__name__)
 def display_mcq(topic):
     # Randomly select 7 questions from the list of history questions
     # Select 3 random questions of level 1, 3 random questions of level 3, and 4 random questions of level 2
-    mcq_level1 = pd.read_csv(f"static/MCQ/level1_{topic}.mcq", sep="|").sample(n=3)
-    mcq_level2 = pd.read_csv(f"static/MCQ/level2_{topic}.mcq", sep="|").sample(n=4)
-    mcq_level3 = pd.read_csv(f"static/MCQ/level3_{topic}.mcq", sep="|").sample(n=3)
+    mcq_level1 = pd.read_csv(f"static/MCQ/level1_{topic.lower()}.mcq", sep="|").sample(n=3)
+    mcq_level2 = pd.read_csv(f"static/MCQ/level2_{topic.lower()}.mcq", sep="|").sample(n=4)
+    mcq_level3 = pd.read_csv(f"static/MCQ/level3_{topic.lower()}.mcq", sep="|").sample(n=3)
 
     mcq = pd.concat([mcq_level1, mcq_level2, mcq_level3], ignore_index=True)
 
