@@ -178,7 +178,6 @@ img{padding: 1em;}
  
 
 .topic1 {
-    text-shadow: 1px 3px 9px rgba(0,0,0,0.6);
     font-weight: bold;
     cursor: pointer;
 	align-self: flex-start; 
