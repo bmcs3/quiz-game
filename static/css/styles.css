@@ -88,8 +88,6 @@ footer {
 
 #go_back:hover {
     color: #414645;
-    font-size: 1.6em;
-    margin-left: .6em;
 }
 
 
@@ -330,6 +328,11 @@ img{padding: 1em;}
                     transform: translateY(-50%);
                     margin: 0 0 0 .5em;
                   }
+
+         #go_back:hover {
+            font-size: 1.6em;
+            margin-left: .6em;
+        }
 
 	 }
 	 
