@@ -82,9 +82,8 @@
 
     // Parsing the questions, options and answers strings into a list of MCQ
     var questions = " {{questions}} "
-    questions = questions.replaceAll("&#39;", "").replaceAll("[", "").replaceAll("]", "").replaceAll("&#34;", "")
-    questions = questions.split(",");
-    questions = questions.map(str => str.trim())
+    questions = questions.split("&#39;,");
+    questions = questions.map(str => str.replaceAll("&#39;", "").replaceAll("[", "").replaceAll("]", "").replaceAll("&#34;", "").trim())
 
     var options = " {{options}} "
     options = options.replaceAll("&#39;", " ")
@@ -94,7 +93,6 @@
     var answers = " {{answers}} "
     answers = answers.replaceAll("&#39;", " ").replaceAll("[", "").replaceAll("]", "")
     answers = answers.split(" , ");
-
     answers = answers.map(str => str.trim())
 
     console.log(answers)
