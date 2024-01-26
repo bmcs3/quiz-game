@@ -79,10 +79,9 @@
         window.location.href = "{{ url_for('main') }}";
     });
 
-
     // Parsing the questions, options and answers strings into a list of MCQ
     var questions = " {{questions}} "
-    questions = questions.split("&#39;,");
+    questions = questions.split("&#34;,").map(str => str.split("&#39;,")).flat();
     questions = questions.map(str => str.replaceAll("&#39;", "").replaceAll("[", "").replaceAll("]", "").replaceAll("&#34;", "").trim())
 
     var options = " {{options}} "
@@ -94,8 +93,6 @@
     answers = answers.replaceAll("&#39;", " ").replaceAll("[", "").replaceAll("]", "")
     answers = answers.split(" , ");
     answers = answers.map(str => str.trim())
-
-    console.log(answers)
 
     // **** The correct answer ****
     answer = " {{answer1}} "
@@ -122,7 +119,16 @@
         if (completed) {
             result.textContent = `${10 - wrong_answers}/10`
             var emoji = document.createElement("span");
-            emoji_value = (wrong_answers==0)?String.fromCodePoint(0x1F60A):(wrong_answers<3)?String.fromCodePoint(0x1F642):(wrong_answers<5)?String.fromCodePoint(0x1F610):(wrong_answers<7)?String.fromCodePoint(0x1F641):String.fromCodePoint(0x1F61E)
+            let emojis = {};
+            // Adding key-value pairs
+            emojis[0] = emojis[1] = String.fromCodePoint(0x1F913)
+            emojis[2] = emojis[3] = String.fromCodePoint(0x1F600)
+            emojis[4]  = emojis[5] = String.fromCodePoint(0x1F642)
+            emojis[6] = emojis[7] = String.fromCodePoint(0x1F610)
+            emojis[8] = emojis[9] = String.fromCodePoint(0x1F614);
+            emojis[10] = String.fromCodePoint(0x1F623);
+
+            emoji_value = emojis[wrong_answers]
             emoji.textContent = emoji_value
             emoji.classList.add("emoji")
         }
