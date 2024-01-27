@@ -103,8 +103,9 @@
     // The count of wrong answers
     wrong_answers = 0
 
-    // Actions to take when the mcq is completed
-    console.log("Questions done");
+    // The sounds
+    var correct_audio = new Audio('static/sounds/correct.wav');
+    var wrong_audio = new Audio('static/sounds/wrong.mp3');
 
     function questions_done(completed) {
 
@@ -183,17 +184,15 @@
 
             // Check if the user got the answer right.
             if (element.textContent == answer){
-                var audio = new Audio('static/sounds/correct.wav');
-                audio.play();
+
+                correct_audio.play();
                 this.style.background = "#41D343";
                 this.style.fontWeight = "bold"
 
             }
             else {
                 wrong_answers += 1
-
-                var audio = new Audio('static/sounds/wrong.mp3');
-                audio.play();
+                wrong_audio.play();
                 this.style.background = "#EA4040";
                 this.style.fontWeight = "bold"
 
