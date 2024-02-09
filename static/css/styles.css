@@ -320,20 +320,6 @@ img{padding: 1em;}
          #question {font-size: 1.5em}
          #option1, #option2, #option3 {font-size: 1.5em, transition: transform 0.3s ease;}
          #option1:hover, #option2:hover, #option3:hover {width: calc(95%);}
-
-         #go_back { position: absolute;
-                    top: 50%;
-                    left: 0;
-                    -ms-transform: translateY(-50%);
-                    transform: translateY(-50%);
-                    margin: 0 0 0 .5em;
-                  }
-
-         #go_back:hover {
-            font-size: 1.6em;
-            margin-left: .6em;
-        }
-
 	 }
 	 
 	 @media screen and (max-width: 196px) {.qMark {display: none}}
